@@ -1,0 +1,39 @@
+.carousel-text {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white
+}
+
+.header-title {
+    font-size: 55px;
+    font-weight: 650;
+    font-family: 'Verdana', 'Geneva', 'Tahoma', 'sans-serif';
+}
+
+.join-btn,
+.contact-btn {
+    display: inline-block;
+    background: #b13b10;
+    padding: 12px 40px;
+    margin: 0 10px;
+    border-radius: 99em;
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    /* letter-spacing: 1px; */
+    transition: .15s background-color, .15s border-color, .15s color, .15s fill;
+    font-weight: 600;
+
+}
+
+.contact-btn {
+    background-color: #fff;
+    color: #b13b10;
+}
+
+.join-btn:hover,
+.contact-btn:hover {
+    background: #99320d;
+    color: #fff;
+}
