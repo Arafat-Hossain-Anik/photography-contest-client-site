@@ -14,14 +14,13 @@
 .join-btn,
 .contact-btn {
     display: inline-block;
-    background: #b13b10;
+    background: #bf0b0b;
     padding: 12px 40px;
     margin: 0 10px;
     border-radius: 99em;
     text-decoration: none;
     color: #fff;
     font-size: 20px;
-    /* letter-spacing: 1px; */
     transition: .15s background-color, .15s border-color, .15s color, .15s fill;
     font-weight: 600;
 
@@ -29,11 +28,11 @@
 
 .contact-btn {
     background-color: #fff;
-    color: #b13b10;
+    color: #a00b0b;
 }
 
 .join-btn:hover,
 .contact-btn:hover {
-    background: #99320d;
+    background: #a00b0b;
     color: #fff;
 }
