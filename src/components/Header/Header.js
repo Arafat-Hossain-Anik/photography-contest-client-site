@@ -6,7 +6,7 @@ const Header = () => {
         <div id="carouselExampleFade" className="carousel slide carousel-fade" data-bs-ride="carousel">
             <div className="carousel-inner">
                 <div className="carousel-item active carousel-container">
-                    <img src="https://rstheme.com/products/html/shooter/shooter-html/images/slider/slide_2.jpg" className="d-block w-100" style={{ height: "650px" }} alt="..." />
+                    <img src="https://rstheme.com/products/html/shooter/shooter-html/images/slider/slide_2.jpg" className="d-block w-100" alt="..." />
                     <div className="carousel-caption d-none d-md-block carousel-text">
                         <h5 className='header-title'>Submit <br /> Your Best Photo</h5>
                         <p>Some representative placeholder content for the first slide.</p>
@@ -17,7 +17,7 @@ const Header = () => {
                     </div>
                 </div>
                 <div className="carousel-item">
-                    <img src="https://rstheme.com/products/html/shooter/shooter-html/images/slider/slide_1.jpg" className="d-block w-100" style={{ height: "650px" }} alt="..." />
+                    <img src="https://rstheme.com/products/html/shooter/shooter-html/images/slider/slide_1.jpg" className="d-block w-100" alt="..." />
                     <div className="carousel-caption d-none d-md-block carousel-text">
                         <h5 className='header-title'>Be Ultimate<br /> Photographer</h5>
                         <p>Some representative placeholder content for the first slide.</p>
