@@ -17,8 +17,6 @@ const SignUpPage = () => {
         const name = nameRef.current.value;
         e.preventDefault();
         if (password1 == password2) {
-            console.log("reg is clicked", email, password1);
-            // console.log(createEmailPasswordUser);
             createEmailPasswordUser(name, email, password1);
         }
         else window.alert("Password does not matched");

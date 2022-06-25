@@ -5,7 +5,7 @@ import axios from "axios";
 
 initializeAuthentication();
 const useFirebase = () => {
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState({});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
     // const [admin, setAdmin] = useState(false);
@@ -20,9 +20,8 @@ const useFirebase = () => {
             .then((userCredential) => {
                 // Signed in 
                 const user = userCredential.user;
-                console.log(user);
                 const newUser = { email, name };
-                // storeUser(newUser);
+                storeUser(newUser);
                 // ...
             })
             .catch((error) => {
@@ -63,14 +62,15 @@ const useFirebase = () => {
     //         .then(res => res.json())
     //         .then(res => setAdmin(res.admin));
     // }, [user.email])
-    // const storeUser = (user) => {
-    //     axios.post('https://hidden-coast-67939.herokuapp.com/users/', user)
-    //         .then(res => {
-    //             if (res.data.insertedId) {
-    //                 alert('Added successfully');
-    //             }
-    //         })
-    // }
+    const storeUser = (user) => {
+        axios.post('http://localhost:3010/user', user)
+            .then(res => {
+                if (res.data.insertedId) {
+                    alert('Registration success!');
+                    document.location.reload();
+                }
+            })
+    }
     return {
         user,
         error,

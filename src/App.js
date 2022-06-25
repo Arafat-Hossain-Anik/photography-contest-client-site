@@ -7,6 +7,7 @@ import MakeContest from './components/AdminDashboard/MakeContest/MakeContest';
 import Login from './Pages/Login/Login';
 import AuthProvider from './context/AuthProvider';
 import Register from './Pages/Register/Register';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Route path="/login" element={<Login />}></Route>
             <Route path="/register" element={<Register />}></Route>
           </Routes>
+          <Footer />
         </BrowserRouter>
       </AuthProvider>
     </div>
