@@ -11,7 +11,6 @@ const ContestEntries = (props) => {
             .then(res => res.json())
             .then(data => setEntries(data));
     }, []);
-    console.log(entries);
     return (
         <div>
             <h3 className='text-center'>All Photos of <span style={{ color: "red" }}>{name}</span></h3>
