@@ -6,15 +6,12 @@ const ContestEntry = (props) => {
     const { contexts } = useAuth();
     const { user } = contexts;
     const { email } = user;
-    const [clicked, setClicked] = useState(false);
     console.log(email);
     const { entry } = props;
-    const { _id, contestId, userEmail, contestImage } = entry;
+    const { _id, contestId, userEmail, contestImage, vote } = entry;
+    const countedVote = vote.length;
     console.log("entry id", _id);
-    const [vote, setVote] = useState(0);
     const handleClick = () => {
-        setVote(vote + 1);
-        setClicked(true);
         const voteData = {
             email: email
         }
@@ -34,7 +31,8 @@ const ContestEntry = (props) => {
             <div className="card mb-3 img-card">
                 <img className='img-fluid' src={`data:image/*;base64,${contestImage}`} />
                 {/* <p>Contestant Email: <span className='fw-bold'>{userEmail}</span></p> */}
-                <button className='vote-btn' onClick={handleClick} disabled={clicked}>&#10084;<span className='fs-6'>{vote}</span></button>
+                <button className='vote-btn' onClick={handleClick} disabled={vote.includes(email) ? true : false}>&#10084;</button>
+                <span className='vote-span'>{countedVote}</span>
             </div>
         </div>);
 };
