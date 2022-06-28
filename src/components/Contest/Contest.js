@@ -1,23 +1,23 @@
 import React from 'react';
 import Countdown from 'react-countdown';
+import { NavLink } from 'react-router-dom';
 
 
-const Completionist = () => <span>Contest Is Over</span>;
-
-
-const renderer = ({ days, hours, minutes, seconds, completed }) => {
-    if (completed) {
-        return <Completionist />;
-    } else {
-        return (
-            <div>
-                <span style={{ fontSize: "40px", fontWeight: "bold" }}>{days}:{hours}:{minutes}:{seconds}</span> <br />
-                <button className='btn btn-success'>Enter Now</button>
-            </div>);
-    }
-};
 const Contest = (props) => {
     const { contest } = props;
+    const Completionist = () => <span>Contest Is Over</span>;
+    const renderer = ({ days, hours, minutes, seconds, completed }) => {
+        if (completed) {
+            return <Completionist />;
+        } else {
+            return (
+                <div>
+                    <span style={{ fontSize: "40px", fontWeight: "bold" }}>{days}:{hours}:{minutes}:{seconds}</span> <br />
+                    {/* <Link className='btn btn-success' to={`/details/$contest._id}` > Enter Now </Link> */}
+                    <NavLink className='btn btn-success' to={`/contest/${contest._id}`}>Enter Now</NavLink>
+                </div >);
+        }
+    };
     return (
 
         <div className="col-sm-6">

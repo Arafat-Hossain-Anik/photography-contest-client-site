@@ -16,7 +16,7 @@ const SignUpPage = () => {
         const password2 = repassRef.current.value;
         const name = nameRef.current.value;
         e.preventDefault();
-        if (password1 == password2) {
+        if (password1 === password2) {
             createEmailPasswordUser(name, email, password1);
         }
         else window.alert("Password does not matched");

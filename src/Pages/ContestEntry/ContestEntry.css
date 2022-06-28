@@ -1,0 +1,20 @@
+.vote-btn {
+    background-color: #c11212;
+    border: 1px solid black;
+    color: white;
+    width: 12%;
+    text-align: center;
+    text-decoration: none;
+    position: absolute;
+    bottom: 1%;
+    font-size: 31px;
+    border-radius: 50%;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility .5s, opacity 0.5s linear;
+}
+
+.img-card:hover .vote-btn {
+    visibility: visible;
+    opacity: 1;
+}
