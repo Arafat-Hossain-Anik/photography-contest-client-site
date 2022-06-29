@@ -3,14 +3,12 @@ import useAuth from '../../hooks/useAuth';
 import './ContestEntry.css';
 
 const ContestEntry = (props) => {
+    const { entry, setEntries } = props;
     const { contexts } = useAuth();
     const { user } = contexts;
     const { email } = user;
-    console.log(email);
-    const { entry } = props;
     const { _id, contestId, userEmail, contestImage, vote } = entry;
     const countedVote = vote.length;
-    console.log("entry id", _id);
     const handleClick = () => {
         const voteData = {
             email: email
@@ -23,13 +21,23 @@ const ContestEntry = (props) => {
             },
         })
             .then((res) => res.json())
-            .then((data) => console.log(data));
+            .then((data) => {
+                console.log(data)
+                // setEntries(entries => {
+                //     //find the current entry
+                //     entries.filter(entry => entry._id === _id)
+                //     //modify the entry with new state
+                //     //
+                // })
+            }
+
+            );
     }
-    console.log(vote);
     return (
         < div className="col-sm-4" >
             <div className="card mb-3 img-card">
-                <img className='img-fluid' src={`data:image/*;base64,${contestImage}`} />
+                {/* <img className='img-fluid' src={`data:image/*;base64,${contestImage}`} /> */}
+                <img className='img-fluid' src={contestImage} />
                 {/* <p>Contestant Email: <span className='fw-bold'>{userEmail}</span></p> */}
                 <button className='vote-btn' onClick={handleClick} disabled={vote.includes(email) ? true : false}>&#10084;</button>
                 <span className='vote-span'>{countedVote}</span>

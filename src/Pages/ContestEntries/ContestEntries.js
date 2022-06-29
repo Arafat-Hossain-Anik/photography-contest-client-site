@@ -16,7 +16,7 @@ const ContestEntries = (props) => {
             <h3 className='text-center'>All Photos of <span style={{ color: "red" }}>{name}</span></h3>
             <div className='row mt-3'>
                 {
-                    entries.map(entry => <ContestEntry key={entry._id} entry={entry} Id={id}></ContestEntry>)
+                    entries.map(entry => <ContestEntry key={entry._id} entry={entry} setEntries={setEntries} Id={id}></ContestEntry>)
                 }
             </div>
         </div>

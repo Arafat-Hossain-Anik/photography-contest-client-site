@@ -9,6 +9,7 @@ const ContestDetails = () => {
     const [image, setImage] = useState(null);
     const { contexts } = useAuth();
     const { user } = contexts;
+    const [upload, setUpload] = useState(false);
     useEffect(() => {
         fetch(`http://localhost:3010/contest/${id}`)
             .then(res => res.json())
@@ -29,6 +30,7 @@ const ContestDetails = () => {
             .then(result => {
                 console.log('Success:', result);
                 if (result) {
+                    setUpload(true);
                     window.alert("Photo Uploaded Successfully");
                     window.location.reload();
                 }
@@ -47,6 +49,11 @@ const ContestDetails = () => {
                             <h2 className="fw-bold">Upload Your Photo</h2>
                             <form onSubmit={handleUpload}>
                                 <input type="file" id="img" name="img" accept="image/*" onChange={(e) => setImage(e.target.files[0])} required />
+                                {/* {!upload ? <div className="d-flex justify-content-center">
+                                    <div className="spinner-border" role="status">
+                                        <span className="visually-hidden">Loading...</span>
+                                    </div>
+                                </div> : ""} */}
                                 <div className="clearfix text-center">
                                     <input type="submit" value="Submit" className='form-btn mb-3' />
                                 </div>
