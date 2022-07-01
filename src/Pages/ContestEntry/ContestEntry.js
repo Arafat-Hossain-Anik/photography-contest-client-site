@@ -3,12 +3,12 @@ import useAuth from '../../hooks/useAuth';
 import './ContestEntry.css';
 
 const ContestEntry = (props) => {
-    const { entry, setEntries } = props;
+    const { entry, setDoneVote } = props;
     const { contexts } = useAuth();
     const { user } = contexts;
     const { email } = user;
     const { _id, contestId, userEmail, contestImage, vote } = entry;
-    const countedVote = vote.length;
+    let countedVote = vote.length;
     const handleClick = () => {
         const voteData = {
             email: email
@@ -23,12 +23,7 @@ const ContestEntry = (props) => {
             .then((res) => res.json())
             .then((data) => {
                 console.log(data)
-                // setEntries(entries => {
-                //     //find the current entry
-                //     entries.filter(entry => entry._id === _id)
-                //     //modify the entry with new state
-                //     //
-                // })
+                setDoneVote(doneVote => doneVote + 1);
             }
 
             );
