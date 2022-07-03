@@ -20,8 +20,8 @@ const Contests = () => {
     return (
         <div className='container mt-3'>
             <div className='d-flex align-items-center flex-column'>
-                <h2>OUR RUNNING <span style={{ color: "#a00b0b" }}>CONTEST</span></h2>
-                <hr style={{ width: "10%", margin: "0", borderTop: "3px solid #a00b0b" }} />
+                <h2 className='special-font fs-1 fw-bold'>Our Running <span style={{ color: "#a00b0b" }}>Contest</span></h2>
+                <hr style={{ width: "15%", margin: "0", opacity: "1", borderTop: "3px solid #a00b0b" }} />
             </div>
             {/* pagination */}
             <div className="btn-group paginator" role="group" aria-label="Basic outlined example">

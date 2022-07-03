@@ -11,7 +11,7 @@ const Header = () => {
                         <h5 className='header-title'>Submit <br /> Your Best Photo</h5>
                         <p>Some representative placeholder content for the first slide.</p>
                         <div>
-                            <Link className='join-btn' to="/join">JOIN NOW</Link>
+                            <Link className='join-btn' to="/login">JOIN NOW</Link>
                             <Link className='contact-btn' to="/contact">CONTACT US</Link>
                         </div>
                     </div>

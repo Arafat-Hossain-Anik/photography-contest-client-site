@@ -1,0 +1,52 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
+
+.section-header,
+.special-font {
+    /* font-family: 'Nothing You Could Do', cursive; */
+    font-family: 'Playball', cursive;
+}
+
+.contact-part {
+    /* border: 1px solid rgb(196, 196, 196); */
+    background-color: rgb(255, 255, 255);
+    box-shadow: 3px 3px 10px rgb(0, 0, 0);
+}
+
+.msg-btn {
+    padding: 10px 20px;
+    background-color: #198754;
+    text-transform: uppercase;
+    color: white;
+    border: 0;
+    box-shadow: 3px 6px 9px gray;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.arrowIcon {
+    padding: 0 5px;
+}
+
+.msg-btn:hover {
+    background-color: #0d5433;
+    /* color: rgb(192, 0, 58); */
+    color: rgb(255, 255, 255);
+    transition: background-color .5s;
+}
+
+.msg-btn:hover .arrowIcon {
+    transform: translateX(10px);
+    transition: transform .5s;
+}
+
+.socialIcon {
+    color: #198754;
+    box-shadow: 3px 6px 9px gray;
+    padding: 5px;
+}
+
+.socialIcon:hover {
+    color: #0d5433;
+    background-color: rgb(223, 218, 218);
+}

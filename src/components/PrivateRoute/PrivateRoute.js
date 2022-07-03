@@ -1,11 +1,12 @@
 import React from 'react';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Outlet, useLocation } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const PrivateRoute = ({ children }) => {
     const { contexts } = useAuth();
     const { user } = contexts;
-    // return user.email ? children : <Navigate to="/login" />;
+    const location = useLocation();
+    // return user.email ? children : <Navigate to="/login" state={{ from: location }} />;
     return user.email ? children : children;
 };
 

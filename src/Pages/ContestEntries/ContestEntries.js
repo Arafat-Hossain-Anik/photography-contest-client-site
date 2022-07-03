@@ -14,7 +14,7 @@ const ContestEntries = (props) => {
     }, [doneVote]);
     return (
         <div>
-            <h3 className='text-center'>All Photos of <span style={{ color: "red" }}>{name}</span></h3>
+            <h3 className='text-center'>All Entries Of This Contest</h3>
             <div className='row mt-3'>
                 {
                     entries.map(entry => <ContestEntry key={entry._id} entry={entry} setEntries={setEntries} setDoneVote={setDoneVote} Id={id}></ContestEntry>)
