@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import Footer from '../../components/Footer/Footer';
+import NavBar from '../../components/NavBar/NavBar';
 // import { NavLink, useHistory, useLocation } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
@@ -46,6 +48,7 @@ const Login = () => {
     }
     return (
         <div>
+            <NavBar></NavBar>
             <div className="container my-5">
                 <div className="row justify-content-center">
                     <div className="col-12 col-md-6 input-field-container roundeds">
@@ -71,6 +74,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+            <Footer></Footer>
         </div>
     );
 };

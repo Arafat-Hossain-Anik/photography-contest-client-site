@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 import './Header.css';
 const Header = () => {
     return (
@@ -11,8 +12,15 @@ const Header = () => {
                         <h5 className='header-title'>Submit <br /> Your Best Photo</h5>
                         <p>Some representative placeholder content for the first slide.</p>
                         <div>
-                            <Link className='join-btn' to="/login">JOIN NOW</Link>
-                            <Link className='contact-btn' to="/contact">CONTACT US</Link>
+                            <Link className='join-btn' to="/register">JOIN NOW</Link>
+                            {/* <Link className='contact-btn' to="#contact">CONTACT US</Link> */}
+                            <HashLink
+                                to="/#contact"
+                                scroll={(el) => el.scrollIntoView({ behavior: 'auto', block: 'end' })}
+                                className='contact-btn'
+                            >
+                                CONTACT US
+                            </HashLink>;
                         </div>
                     </div>
                 </div>

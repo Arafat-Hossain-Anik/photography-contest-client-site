@@ -1,5 +1,7 @@
 import React, { useRef } from 'react';
 import { NavLink } from 'react-router-dom';
+import Footer from '../../components/Footer/Footer';
+import NavBar from '../../components/NavBar/NavBar';
 import useAuth from '../../hooks/useAuth';
 import './Register.css';
 
@@ -25,6 +27,7 @@ const SignUpPage = () => {
     return (
         // sign up form
         <>
+            <NavBar></NavBar>
             <div className="container my-5">
                 <div className="row justify-content-center">
                     <div className="col-12 col-md-6 input-field-container roundeds">
@@ -47,7 +50,7 @@ const SignUpPage = () => {
                     </div>
                 </div>
             </div>
-
+            <Footer></Footer>
         </>
     );
 };

@@ -29,7 +29,7 @@ const Contests = () => {
                     [...Array(pageCount).keys()].map(number => <button className={number === page ? 'btn btn-outline-primary active' : 'btn btn-outline-primaty'} key={number} onClick={() => setPage(number)}>{number + 1}</button>)
                 }
             </div>
-            <div className="row mt-4">
+            <div className="row mt-4 justify-content-center">
                 {
                     contests.map(contest => <Contest key={contest._id} contest={contest}></Contest>)
                 }

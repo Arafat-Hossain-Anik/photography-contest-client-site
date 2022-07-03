@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Footer from '../../components/Footer/Footer';
+import NavBar from '../../components/NavBar/NavBar';
 import useAuth from '../../hooks/useAuth';
 import ContestEntries from '../ContestEntries/ContestEntries';
 
@@ -45,31 +47,35 @@ const ContestDetails = () => {
             });
     }
     return (
-        <div className='container mt-3'>
-            <h2 className='text-center'>{contest.name}</h2>
-            <>
-                {
-                    (entry.userEmail === !email) ?
-                        <div className="container my-5">
-                            <div className="row justify-content-center">
-                                <div className="col-12 col-md-6 input-field-container roundeds">
-                                    <h2 className="fw-bold">Upload Your Photo</h2>
-                                    <form onSubmit={handleUpload}>
-                                        <input type="file" id="img" name="img" accept="image/*" onChange={(e) => setImage(e.target.files[0])} required />
-                                        <div className="clearfix text-center">
-                                            <input type="submit" value="Submit" className='form-btn mb-3' />
-                                        </div>
-                                    </form>
+        <>
+            <NavBar></NavBar>
+            <div className='container mt-3'>
+                <h2 className='text-center'>{contest.name}</h2>
+                <>
+                    {
+                        (entry.userEmail === !email) ?
+                            <div className="container my-5">
+                                <div className="row justify-content-center">
+                                    <div className="col-12 col-md-6 input-field-container roundeds">
+                                        <h2 className="fw-bold">Upload Your Photo</h2>
+                                        <form onSubmit={handleUpload}>
+                                            <input type="file" id="img" name="img" accept="image/*" onChange={(e) => setImage(e.target.files[0])} required />
+                                            <div className="clearfix text-center">
+                                                <input type="submit" value="Submit" className='form-btn mb-3' />
+                                            </div>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        : <div>
-                            <h6 className='text-center text-success'>You have already uploaded your photo</h6>
-                        </div>
-                }
-            </>
-            <ContestEntries contest={contest} id={id} />
-        </div>
+                            : <div>
+                                <h6 className='text-center text-success'>You have already uploaded your photo</h6>
+                            </div>
+                    }
+                </>
+                <ContestEntries contest={contest} id={id} />
+            </div>
+            <Footer></Footer>
+        </>
     );
 };
 

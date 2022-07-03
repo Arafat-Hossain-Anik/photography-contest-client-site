@@ -22,10 +22,7 @@ const DashBoard = () => {
                     <>
                         <Link style={{ color: 'white', fontWeight: 'bold', textDecoration: 'none' }} to={`/dashboard/contest`}>Create Contest</Link>
 
-                        <Link style={{ color: 'white', fontWeight: 'bold', textDecoration: 'none' }} to={`/dashboard/manageproduct`}>Manage Products</Link>
-
-                        <Link style={{ color: 'white', fontWeight: 'bold', textDecoration: 'none' }} to={`/dashboard/addedservice`}>Add Product</Link>
-
+                        <Link style={{ color: 'white', fontWeight: 'bold', textDecoration: 'none' }} to={`/dashboard/managecontest`}>Manage Contest</Link>
                         <Link style={{ color: 'white', fontWeight: 'bold', textDecoration: 'none' }} to={`/dashboard/makeAdmin`}>Make Admin</Link>
                     </>
                 }

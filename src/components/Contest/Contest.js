@@ -22,7 +22,7 @@ const Contest = (props) => {
     };
     return (
 
-        <div className="col-sm-6">
+        <div className="col-sm-5">
             <div className="card mb-3 h-100">
                 <img src={contest.image} className="card-img-top" alt="..." style={{ height: '300px' }} />
                 <div className="card-body">
