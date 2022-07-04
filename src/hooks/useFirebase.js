@@ -63,7 +63,7 @@ const useFirebase = () => {
     //         .then(res => setAdmin(res.admin));
     // }, [user.email])
     const storeUser = (user) => {
-        axios.post('http://localhost:3010/user', user)
+        axios.post('https://floating-wildwood-13297.herokuapp.com/user', user)
             .then(res => {
                 if (res.data.insertedId) {
                     alert('Registration success!');

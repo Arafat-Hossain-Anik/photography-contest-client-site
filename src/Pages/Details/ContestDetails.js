@@ -13,14 +13,14 @@ const ContestDetails = () => {
     const { user } = contexts;
     const [entry, setEntry] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:3010/contest/${id}`)
+        fetch(`https://floating-wildwood-13297.herokuapp.com/contest/${id}`)
             .then(res => res.json())
             .then(data => setContest(data))
     }, [])
     //priviously uploaded or not
     const email = user.email;
     useEffect(() => {
-        fetch(`http://localhost:3010/entry/${id}/${email}`)
+        fetch(`https://floating-wildwood-13297.herokuapp.com/entry/${id}/${email}`)
             .then(res => res.json())
             .then(data => setEntry(data))
     }, []);
@@ -30,7 +30,7 @@ const ContestDetails = () => {
         const email = user.email;
         const formData = new FormData();
         formData.append('image', image);
-        fetch(`http://localhost:3010/contest/${id}/${email}/image`, {
+        fetch(`https://floating-wildwood-13297.herokuapp.com/contest/${id}/${email}/image`, {
             method: 'POST',
             body: formData
         })

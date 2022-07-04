@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 const ManageContest = () => {
     const [contests, setContests] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:3010/contest`)
+        fetch(`https://floating-wildwood-13297.herokuapp.com/contest`)
             .then(res => res.json())
             .then(data => {
                 setContests(data);
@@ -11,7 +11,7 @@ const ManageContest = () => {
     const removeItem = (id) => {
         const areSure = window.confirm('Are You Sure Want To Delete?');
         if (areSure) {
-            fetch(`http://localhost:3010/contest/${id}`, {
+            fetch(`https://floating-wildwood-13297.herokuapp.com/contest/${id}`, {
                 method: 'DELETE'
             })
                 .then(res => res.json())

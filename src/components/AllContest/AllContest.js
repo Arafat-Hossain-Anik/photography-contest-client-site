@@ -6,7 +6,7 @@ import NavBar from '../NavBar/NavBar';
 const AllContest = () => {
     const [contests, setContests] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:3010/contest`)
+        fetch(`https://floating-wildwood-13297.herokuapp.com/contest`)
             .then(res => res.json())
             .then(data => {
                 setContests(data);

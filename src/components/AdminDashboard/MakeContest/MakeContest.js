@@ -20,7 +20,7 @@ const MakeContest = () => {
         formData.append('image', image);
         // console.log(name, dateTime, details, image);
         console.log(formData);
-        fetch('http://localhost:3010/createcontest', {
+        fetch('https://floating-wildwood-13297.herokuapp.com/createcontest', {
             method: 'POST',
             body: formData
         })

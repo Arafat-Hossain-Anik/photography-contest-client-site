@@ -13,7 +13,7 @@ const ContestEntry = (props) => {
         const voteData = {
             email: email
         }
-        fetch(`http://localhost:3010/vote/${_id}`, {
+        fetch(`https://floating-wildwood-13297.herokuapp.com/vote/${_id}`, {
             method: 'PATCH',
             body: JSON.stringify(voteData),
             headers: {

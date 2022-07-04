@@ -8,7 +8,7 @@ const Contests = () => {
     const [page, setPage] = useState(0);
     const size = 2;
     useEffect(() => {
-        fetch(`http://localhost:3010/contests?page=${page}&&size=${size}`)
+        fetch(`https://floating-wildwood-13297.herokuapp.com/contests?page=${page}&&size=${size}`)
             .then(res => res.json())
             .then(data => {
                 setContests(data.result);
