@@ -5,7 +5,7 @@ import './DashBoard.css';
 
 const DashBoard = () => {
     const { contexts } = useAuth();
-    contexts.admin = true;
+    // contexts.admin = true;
     const defImg = 'https://randomuser.me/api/portraits/men/70.jpg';
     return (
         <div>

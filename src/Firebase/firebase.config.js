@@ -1,10 +1,10 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyAL1u3UAY7W5otDbQ5B5d6Uq-4kErFkhUI",
-    authDomain: "bestclick-photography-contest.firebaseapp.com",
-    projectId: "bestclick-photography-contest",
-    storageBucket: "bestclick-photography-contest.appspot.com",
-    messagingSenderId: "73092531964",
-    appId: "1:73092531964:web:a18b0eb8eff6f2a66cf979"
+    apiKey: "AIzaSyBWPd2pYgdIWccmhB9U3UJ80pc10T0gvsE",
+    authDomain: "best-click-photography-contest.firebaseapp.com",
+    projectId: "best-click-photography-contest",
+    storageBucket: "best-click-photography-contest.appspot.com",
+    messagingSenderId: "1008038149125",
+    appId: "1:1008038149125:web:3678620de376cf643eb06c"
 };
 
 export default firebaseConfig;

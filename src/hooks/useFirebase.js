@@ -8,7 +8,7 @@ const useFirebase = () => {
     const [user, setUser] = useState({});
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
-    // const [admin, setAdmin] = useState(false);
+    const [admin, setAdmin] = useState(false);
     const auth = getAuth();
     const googleProvider = new GoogleAuthProvider();
 
@@ -21,7 +21,7 @@ const useFirebase = () => {
                 // Signed in 
                 const user = userCredential.user;
                 const newUser = { email, name };
-                storeUser(newUser);
+                storeUser(newUser, 'POST');
                 // ...
             })
             .catch((error) => {
@@ -57,29 +57,33 @@ const useFirebase = () => {
             setLoading(false)
         })
     }, []);
-    // useEffect(() => {
-    //     fetch(`https://hidden-coast-67939.herokuapp.com/users/${user.email}`)
-    //         .then(res => res.json())
-    //         .then(res => setAdmin(res.admin));
-    // }, [user.email])
-    const storeUser = (user) => {
-        axios.post('https://floating-wildwood-13297.herokuapp.com/user', user)
+    useEffect(() => {
+        fetch(`https://floating-wildwood-13297.herokuapp.com/users/${user.email}`)
+            .then(res => res.json())
+            .then(res => setAdmin(res.admin));
+    }, [user.email])
+    const storeUser = (user, method) => {
+        fetch('https://floating-wildwood-13297.herokuapp.com/user', {
+            method: method, // or 'PUT'
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(user),
+        })
             .then(res => {
-                if (res.data.insertedId) {
-                    alert('Registration success!');
-                    document.location.reload();
-                }
             })
     }
     return {
         user,
         error,
+        admin,
         createEmailPasswordUser,
         signInWithEmailPassword,
         singInUsingGoogle,
         logOut,
         setError,
         setLoading,
+        storeUser,
         loading
     }
 }
