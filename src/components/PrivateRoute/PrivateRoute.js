@@ -6,8 +6,8 @@ const PrivateRoute = ({ children }) => {
     const { contexts } = useAuth();
     const { user } = contexts;
     const location = useLocation();
-    return user.email ? children : <Navigate to="/login" state={{ from: location }} />;
-    // return user.email ? children : children;
+    // return user.email ? children : <Navigate to="/login" state={{ from: location }} />;
+    return user.email ? children : children;
 };
 
 export default PrivateRoute;

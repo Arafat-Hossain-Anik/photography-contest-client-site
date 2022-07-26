@@ -5,7 +5,7 @@ const MakeAdmin = () => {
     const handleSubmit = (e) => {
         const email = emailRef.current.value;
         const adminMail = { email };
-        fetch('https://floating-wildwood-13297.herokuapp.com/users', {
+        fetch('http://localhost:5000/users', {
             method: 'put',
             headers: {
                 'content-type': 'application/json'

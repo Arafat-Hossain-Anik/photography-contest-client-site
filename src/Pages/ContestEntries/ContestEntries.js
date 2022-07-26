@@ -8,7 +8,7 @@ const ContestEntries = (props) => {
     const [entries, setEntries] = useState([]);
     const [doneVote, setDoneVote] = useState(null);
     useEffect(() => {
-        fetch(`https://floating-wildwood-13297.herokuapp.com/entries/${id}`)
+        fetch(`http://localhost:5000/entries/${id}`)
             .then(res => res.json())
             .then(data => setEntries(data));
     }, [doneVote]);

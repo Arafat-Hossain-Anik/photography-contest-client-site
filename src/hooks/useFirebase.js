@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged, signOut, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import initializeAuthentication from "../Firebase/firebase.init";
-import axios from "axios";
-
 initializeAuthentication();
 const useFirebase = () => {
     const [user, setUser] = useState({});
@@ -58,12 +56,12 @@ const useFirebase = () => {
         })
     }, []);
     useEffect(() => {
-        fetch(`https://floating-wildwood-13297.herokuapp.com/users/${user.email}`)
+        fetch(`http://localhost:5000/users/${user.email}`)
             .then(res => res.json())
             .then(res => setAdmin(res.admin));
     }, [user.email])
     const storeUser = (user, method) => {
-        fetch('https://floating-wildwood-13297.herokuapp.com/user', {
+        fetch('http://localhost:5000/user', {
             method: method, // or 'PUT'
             headers: {
                 'Content-Type': 'application/json',

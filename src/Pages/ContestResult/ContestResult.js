@@ -2,28 +2,31 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Footer from '../../components/Footer/Footer';
 import NavBar from '../../components/NavBar/NavBar';
+import useAuth from '../../hooks/useAuth';
+import { createPdf } from '../../Utility/pdfDownload';
 import './ContestResult.css';
 
 const ContestResult = () => {
     const { id } = useParams();
     const [contest, setContest] = useState({});
     const [entries, setEntries] = useState([]);
-    const [entry, setEntry] = useState({});
+    const { contexts } = useAuth();
+    const { user } = contexts;
     useEffect(() => {
-        fetch(`https://floating-wildwood-13297.herokuapp.com/contest/${id}`)
+        fetch(`http://localhost:5000/contest/${id}`)
             .then(res => res.json())
             .then(data => setContest(data))
     }, []);
     useEffect(() => {
-        fetch(`https://floating-wildwood-13297.herokuapp.com/entries/${id}`)
+        fetch(`http://localhost:5000/entries/${id}`)
             .then(res => res.json())
             .then(data => setEntries(data))
     }, []);
     let maxVote = Math.max(...entries.map(entry => entry.vote.length));
     let maxEntry = entries.find(entry => entry.vote.length === maxVote);
-    if (maxEntry) {
-        const { userEmail, contestImage } = maxEntry;
-        console.log(userEmail);
+    // creating winner certificate
+    const handleDownload = async () => {
+        await createPdf(user.displayName)
     }
     return (
         <>
@@ -37,6 +40,9 @@ const ContestResult = () => {
                             <div className="card-body">
                                 <h2 className="card-title text-center text-danger special-font fw-bold">Congratulations</h2>
                                 <p className="card-text fw-bold">Winner E-mail: <span className='text-secondary'>{maxEntry.userEmail}</span></p>
+                                {
+                                    user.email === maxEntry.userEmail ? <button onClick={handleDownload} className="btn btn-primary">Get Certificate</button> : ""
+                                }
                             </div>
                         </div>
                     </div> : ""
